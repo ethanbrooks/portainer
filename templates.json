@@ -54,7 +54,7 @@
   },
   {
     "type": 1,
-    "title": "MySQL",
+    "title": "MySQL 5.7",
     "description": "The most popular open-source database",
     "categories": ["database"],
     "platform": "linux",
