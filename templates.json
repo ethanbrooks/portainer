@@ -3,10 +3,10 @@
     "type": 2,
     "title": "Node-Red",
     "description": "Node-Red",
-    "categories": ["encrypt0"],
+    "categories": ["ebr00ks"],
     "platform": "linux",
     "logo": "https://registry.png",
-    "image": "nodered:latest",
+    "image": "ebr00ks/nodered:latest",
     "ports": [
       "5000/tcp"
     ],
@@ -16,14 +16,11 @@
         "label": "Root password"
       }
     ],
-    "ports": [
-      "3306/tcp"
-    ],
     "volumes": [{ "container": "/var/lib/registry"}],
     "privileged": true
     "repository": {
-      "url": "https://github.com/portainer/templates",
-      "stackfile": "stacks/portainer-agent/docker-stack.yml"
+      "url": "https://github.com/ethanbrooks/nodered",
+      "stackfile": "docker-stack.yml"
     }
   },
   {
