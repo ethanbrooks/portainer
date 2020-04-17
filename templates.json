@@ -1,4 +1,31 @@
 [
+    {
+    "type": 2,
+    "title": "Node-Red",
+    "description": "Node-Red",
+    "categories": ["encrypt0"],
+    "platform": "linux",
+    "logo": "https://registry.png",
+    "image": "nodered:latest",
+    "ports": [
+      "5000/tcp"
+    ],
+    "env": [
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "label": "Root password"
+      }
+    ],
+    "ports": [
+      "3306/tcp"
+    ],
+    "volumes": [{ "container": "/var/lib/registry"}],
+    "privileged": true
+    "repository": {
+      "url": "https://github.com/portainer/templates",
+      "stackfile": "stacks/portainer-agent/docker-stack.yml"
+    }
+  },
   {
     "type": 1,
     "title": "Registry",
