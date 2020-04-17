@@ -2,6 +2,7 @@
 		"type": 2,
 		"title": "Node-Red",
 		"description": "Node-Red",
+		"note": "You can use this field to specify extra information. <br/> It supports <b>HTML</b>.",
 		"categories": ["ebr00ks"],
 		"platform": "linux",
 		"logo": "https://nodered.org/about/resources/media/node-red-hexagon.png",
@@ -9,6 +10,7 @@
 		"privileged": true,
 		"interactive": true,
 		"restart_policy": "unless-stopped",
+		"command": "/bin/bash -c \"echo hello\" && exit 777",
 		"network": "host",
 		"hostname": "mycontainername",
 		"ports": [
