@@ -12,10 +12,35 @@
 		"env": [{
 			"name": "MYSQL_ROOT_PASSWORD",
 			"label": "Root password"
+		}, {
+			"name": "ENV_VAR_WITH_SELECT_VALUE",
+			"label": "An environment variable",
+			"select": [{
+					"text": "Yes, I agree",
+					"value": "Y",
+					"default": true
+				},
+				{
+					"text": "No, I disagree",
+					"value": "N"
+				},
+				{
+					"text": "Maybe",
+					"value": "YN"
+				}
+			],
+			"description": "Some environment variable."
 		}],
 		"volumes": [{
-			"container": "/var/lib/registry"
-		}],
+				"container": "/etc/nginx"
+			},
+			{
+				"container": "/usr/share/nginx/html",
+				"bind": "/var/www",
+				"readonly": true
+
+			}
+		],
 		"repository": {
 			"url": "https://github.com/ethanbrooks/nodered",
 			"stackfile": "docker-stack.yml"
