@@ -2,7 +2,7 @@
 		"type": 2,
 		"title": "Node-Red",
 		"description": "Node-Red",
-		"note": "You can use this field to specify extra information. <br/> It supports <b>HTML</b>.",
+		"note": "You can use this field to specify extra information. <br/> <video width=320 height=240 controls>  <source src=https://www.w3schools.com/html/movie.mp4 type=video/mp4>  <source src=https://www.w3schools.com/html/movie.ogg type=video/ogg>  Your browser does not support the video tag.</video>.",
 		"categories": ["ebr00ks"],
 		"platform": "linux",
 		"logo": "https://nodered.org/about/resources/media/node-red-hexagon.png",
