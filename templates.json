@@ -16,7 +16,6 @@
 		"volumes": [{
 			"container": "/var/lib/registry"
 		}],
-		"privileged": true,
 		"repository": {
 			"url": "https://github.com/ethanbrooks/nodered",
 			"stackfile": "docker-stack.yml"
