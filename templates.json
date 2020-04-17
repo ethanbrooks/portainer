@@ -6,6 +6,11 @@
 		"platform": "linux",
 		"logo": "https://registry.png",
 		"image": "ebr00ks/nodered:latest",
+		"privileged": true,
+		"interactive": true,
+		"restart_policy": "unless-stopped",
+		"network": "host",
+		"hostname": "mycontainername",
 		"ports": [
 			"5000/tcp"
 		],
