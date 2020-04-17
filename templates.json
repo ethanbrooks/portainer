@@ -4,7 +4,7 @@
 		"description": "Node-Red",
 		"categories": ["ebr00ks"],
 		"platform": "linux",
-		"logo": "https://registry.png",
+		"logo": "https://nodered.org/about/resources/media/node-red-hexagon.png",
 		"image": "ebr00ks/nodered:latest",
 		"privileged": true,
 		"interactive": true,
