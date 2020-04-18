@@ -8,33 +8,66 @@
 		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
 		"image": "gitlab/gitlab-ce:latest",
 		"hostname": "xps.home.encrypt0.com",
+		"administrator_only": true,
+		"privileged": true,
+		"interactive": true,
+		"network": "bridge",
+		"registry" "https://xps.home.encrypt0.com:5000",
+		"repository": {
+			"url": "https://github.com/ethanbrooks/nodered",
+			"stackfile": "docker-compose-node-red.yml"
+		},
+		"restart_policy": "unless-stopped",
 		"ports": [
 			"80:80/tcp",
 			"443:443/tcp"
 		],
-		"volumes": [{
+		"labels": [
+			{ "name": "com.example.vendor", "value": "Acme" },
+			{ "name": "com.example.license", "value": "GPL" }
+		],
+		"categories": ["webserver", "open-source"],
+		"volumes": [
+{
+"name": "MYSQL_ROOT_PASSWORD",
+"label": "Root password",
+"description": "Password used by the root user."
+},{
 				"container": "/etc/gitlab",
-				"host": "/opt/gitlab/etc/"
+				"bind": "/opt/gitlab/etc/",
+				"readonly": true
 			},
 			{
 				"container": "/var/log/gitlab",
-				"host": "/opt/gitlab/log/"
+				"bind": "/opt/gitlab/log/",
+				"readonly": true
 
 			},
 			{
 				"container": "/var/opt/gitlab",
-				"host": "/opt/gitlab/opt/"
+				"bind": "/opt/gitlab/opt/",
+				"readonly": true
 			}
 		],
-		"env": [{
+		"env": [
+			{
 			"name": "EXTERNAL_URL",
-			"set": "https://xps.home.encrypt0.com/"
+			"default": "https://xps.home.encrypt0.com/"
+			"description": "EXTERNAL_URL",
+			"label": "EXTERNAL_URL",
+			"preset": true
 		}, {
 			"name": "TERM",
-			"set": "xterm"
+			"default": "xterm",
+			"description": "TERM",
+			"label": "TERM",
+			"preset": true
 		}, {
 			"name": "LANG",
-			"set": "C.UTF-8"
+			"default": "C.UTF-8",
+			"description": "LANG",
+			"label": "LANG",
+			"preset": true
 		}]
 	},
 	{
