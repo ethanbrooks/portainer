@@ -1,5 +1,24 @@
-[{
+[
+	{
 		"type": 2,
+		"title": "Registry",
+		"description": "Docker image registry",
+		"categories": ["docker"],
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+		"image": "registry:latest",
+		"repository": {
+			"url": "https://github.com/ethanbrooks/nodered",
+			"stackfile": "docker-compose-node-red.yml"
+		},
+		"ports": [
+			"5000/tcp"
+		],
+		"volumes": [{
+			"container": "/var/lib/registry"
+		}]
+	},{
+		"type": 1,
 		"title": "node-red",
 		"description": "KitchenSink",
 		"administrator_only": false,
@@ -8,10 +27,6 @@
 		"platform": "linux",
 		"logo": "https://nodered.org/about/resources/media/node-red-hexagon.png",
 		"image": "nodered/node-red:latest",
-		"repository": {
-			"url": "https://github.com/ethanbrooks/nodered",
-			"stackfile": "docker-compose-node-red.yml"
-		},
 		"privileged": true,
 		"interactive": false,
 		"restart_policy": "unless-stopped",
