@@ -1,21 +1,48 @@
-[{
+################################################################################
+# Node-RED Stack or Compose
+################################################################################
+# docker stack deploy node-red --compose-file 
+# docker-compose -f docker-compose-node-red.yml -p myNoderedProject up
+################################################################################
+version: "3.7"
+
+services:
+  :
+    image: 
+    environment:
+      - 
+    ports:
+      -
+    networks:
+      - 
+    volumes:
+      - node-red-data
+
+volumes:
+  node-red-data:
+
+networks:
+  node-red-net:[{
 		"type": 2,
-		"title": "KitchenSink",
+		"title": "node-red",
 		"description": "KitchenSink",
 		"administrator_only": false,
 		"note": "You can use this field to specify extra information.",
 		"categories": ["ebr00ks"],
 		"platform": "linux",
 		"logo": "https://nodered.org/about/resources/media/node-red-hexagon.png",
-		"image": "ebr00ks/nodered:latest",
+		"image": "nodered/node-red:latest",
+		"repository": {
+			"url": "https://github.com/ethanbrooks/nodered",
+			"stackfile": "docker-compose-node-red.yml"
+		},
 		"privileged": true,
-		"interactive": true,
+		"interactive": false,
 		"restart_policy": "unless-stopped",
-		"command": "/bin/bash -c \"echo hello\" && exit 777",
-		"network": "host",
-		"hostname": "mycontainername",
+		"network": "node-red-net",
+		"hostname": "node-red",
 		"ports": [
-			"5000/tcp"
+			"1880:1880/tcp"
 		],
 		"labels": [{
 				"name": "com.example.vendor",
@@ -31,14 +58,11 @@
 			}
 		],
 		"env": [{
-			"name": "MYSQL_ROOT_PASSWORD",
-			"label": "Root password"
-		}, {
-			"name": "ENV_VAR_WITH_SELECT_VALUE",
-			"label": "An environment variable",
+			"name": "TZ",
+			"label": "Timezone",
 			"select": [{
-					"text": "Yes, I agree",
-					"value": "Y",
+					"text": "Amsterdam",
+					"value": "Europe/Amsterdam",
 					"default": true
 				},
 				{
@@ -53,18 +77,18 @@
 			"description": "Some environment variable."
 		}],
 		"volumes": [{
-				"container": "/etc/nginx"
+				"container": "node-red-data"
 			},
 			{
-				"container": "/usr/share/nginx/html",
-				"bind": "/var/www",
-				"readonly": true
+				"container": "/data",
+				"bind": "./data",
+				"readonly": false
 
 			}
 		],
 		"repository": {
 			"url": "https://github.com/ethanbrooks/nodered",
-			"stackfile": "docker-stack.yml"
+			"stackfile": "docker-compose-node-red.yml"
 		}
 	},{
 		"type": 2,
