@@ -7,6 +7,7 @@
 		"platform": "linux",
 		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
 		"image": "gitlab/gitlab-ce:latest",
+		"name": "gitlab-ce",
 		"hostname": "xps.home.encrypt0.com",
 		"administrator_only": true,
 		"privileged": true,
