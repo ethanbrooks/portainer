@@ -9,9 +9,8 @@
 		"image": "gitlab/gitlab-ce:latest",
 		"hostname": "xps.home.encrypt0.com",
 		"ports": [
-			"80/tcp",
-			"443/tcp",
-			"22/tcp"
+			"80:80/tcp",
+			"443:443/tcp"
 		],
 		"volumes": [{
 				"container": "/etc/gitlab",
@@ -29,16 +28,13 @@
 		],
 		"env": [{
 			"name": "EXTERNAL_URL",
-			"value": "https://xps.home.encrypt0.com/",
-			"label": "Superuser"
+			"set": "https://xps.home.encrypt0.com/"
 		}, {
 			"name": "TERM",
-			"value": "xterm",
-			"label": "Superuser"
+			"set": "xterm"
 		}, {
 			"name": "LANG",
-			"value": "C.UTF-8",
-			"label": "Superuser"
+			"set": "C.UTF-8"
 		}]
 	},
 	{
