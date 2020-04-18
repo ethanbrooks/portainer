@@ -12,7 +12,7 @@
 		"privileged": true,
 		"interactive": true,
 		"network": "bridge",
-		"registry" "https://xps.home.encrypt0.com:5000",
+		"registry": "https://xps.home.encrypt0.com:5000",
 		"repository": {
 			"url": "https://github.com/ethanbrooks/nodered",
 			"stackfile": "docker-compose-node-red.yml"
@@ -22,17 +22,20 @@
 			"80:80/tcp",
 			"443:443/tcp"
 		],
-		"labels": [
-			{ "name": "com.example.vendor", "value": "Acme" },
-			{ "name": "com.example.license", "value": "GPL" }
+		"labels": [{
+				"name": "com.example.vendor",
+				"value": "Acme"
+			},
+			{
+				"name": "com.example.license",
+				"value": "GPL"
+			}
 		],
-		"categories": ["webserver", "open-source"],
-		"volumes": [
-{
-"name": "MYSQL_ROOT_PASSWORD",
-"label": "Root password",
-"description": "Password used by the root user."
-},{
+		"volumes": [{
+				"name": "MYSQL_ROOT_PASSWORD",
+				"label": "Root password",
+				"description": "Password used by the root user."
+			}, {
 				"container": "/etc/gitlab",
 				"bind": "/opt/gitlab/etc/",
 				"readonly": true
@@ -49,10 +52,9 @@
 				"readonly": true
 			}
 		],
-		"env": [
-			{
+		"env": [{
 			"name": "EXTERNAL_URL",
-			"default": "https://xps.home.encrypt0.com/"
+			"default": "https://xps.home.encrypt0.com",
 			"description": "EXTERNAL_URL",
 			"label": "EXTERNAL_URL",
 			"preset": true
