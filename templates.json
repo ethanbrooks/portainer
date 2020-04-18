@@ -1,4 +1,46 @@
-[
+[{
+		"type": 2,
+		"title": "Gitlab CE",
+		"description": "Open-source end-to-end software development platform",
+		"note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
+		"categories": ["development", "project-management"],
+		"platform": "linux",
+		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
+		"image": "gitlab/gitlab-ce:latest",
+		"hostname": "xps.home.encrypt0.com",
+		"ports": [
+			"80/tcp",
+			"443/tcp",
+			"22/tcp"
+		],
+		"volumes": [{
+				"container": "/etc/gitlab",
+				"host": "/opt/gitlab/etc/"
+			},
+			{
+				"container": "/var/log/gitlab",
+				"host": "/opt/gitlab/log/"
+
+			},
+			{
+				"container": "/var/opt/gitlab",
+				"host": "/opt/gitlab/opt/"
+			}
+		],
+		"env": [{
+			"name": "EXTERNAL_URL",
+			"value": "https://xps.home.encrypt0.com/",
+			"label": "Superuser"
+		}, {
+			"name": "TERM",
+			"value": "xterm",
+			"label": "Superuser"
+		}, {
+			"name": "LANG",
+			"value": "C.UTF-8",
+			"label": "Superuser"
+		}]
+	},
 	{
 		"type": 2,
 		"title": "Registry",
@@ -17,7 +59,7 @@
 		"volumes": [{
 			"container": "/var/lib/registry"
 		}]
-	},{
+	}, {
 		"type": 1,
 		"title": "node-red",
 		"description": "KitchenSink",
@@ -204,31 +246,7 @@
 		}],
 		"command": "start --insecure"
 	},
-	{
-		"type": 1,
-		"title": "Gitlab CE",
-		"description": "Open-source end-to-end software development platform",
-		"note": "Default username is <b>root</b>. Check the <a href=\"https://docs.gitlab.com/omnibus/docker/README.html#after-starting-a-container\" target=\"_blank\">Gitlab documentation</a> to get started.",
-		"categories": ["development", "project-management"],
-		"platform": "linux",
-		"logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/gitlab_ce.png",
-		"image": "gitlab/gitlab-ce:latest",
-		"ports": [
-			"80/tcp",
-			"443/tcp",
-			"22/tcp"
-		],
-		"volumes": [{
-				"container": "/etc/gitlab"
-			},
-			{
-				"container": "/var/log/gitlab"
-			},
-			{
-				"container": "/var/opt/gitlab"
-			}
-		]
-	},
+
 	{
 		"type": 1,
 		"title": "SQL Server",
