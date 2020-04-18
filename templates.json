@@ -1,28 +1,4 @@
-################################################################################
-# Node-RED Stack or Compose
-################################################################################
-# docker stack deploy node-red --compose-file 
-# docker-compose -f docker-compose-node-red.yml -p myNoderedProject up
-################################################################################
-version: "3.7"
-
-services:
-  :
-    image: 
-    environment:
-      - 
-    ports:
-      -
-    networks:
-      - 
-    volumes:
-      - node-red-data
-
-volumes:
-  node-red-data:
-
-networks:
-  node-red-net:[{
+[{
 		"type": 2,
 		"title": "node-red",
 		"description": "KitchenSink",
@@ -85,12 +61,8 @@ networks:
 				"readonly": false
 
 			}
-		],
-		"repository": {
-			"url": "https://github.com/ethanbrooks/nodered",
-			"stackfile": "docker-compose-node-red.yml"
-		}
-	},{
+		]
+	}, {
 		"type": 2,
 		"title": "NodeRed",
 		"description": "NodeRed",
