@@ -15,8 +15,8 @@
 		"network": "bridge",
 		"registry": "https://xps.home.encrypt0.com:5000",
 		"repository": {
-			"url": "https://github.com/ethanbrooks/nodered",
-			"stackfile": "docker-compose-node-red.yml"
+			"url": "https://xps.home.encrypt0.com/ethanbrooks/docker-gitlab",
+			"stackfile": "docker-compose.yml"
 		},
 		"restart_policy": "unless-stopped",
 		"ports": [
